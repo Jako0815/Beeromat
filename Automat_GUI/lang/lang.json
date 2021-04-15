@@ -1,0 +1,85 @@
+{
+  "DE": {
+
+    "title": {
+      "welcome":"Willkommen!",
+      "error":"Fehler!"
+
+    },
+
+
+
+    "button":{
+      "yes":"Ja",
+      "no":"Nein",
+      "abort":"Abbrechen",
+      "next":"Weiter",
+      "back":"Zurück",
+      "confirm":"Bestätigen",
+      "cash_out":"Auszahlung",
+      "cash_in":"Einzahlung",
+      "menu":"Einstellungen",
+      "home":"Hauptmenü",
+      "login":"Einloggen",
+      "logout":"Ausloggen"
+
+
+
+    },
+
+
+    "error": {
+      "error-header":"Fehler im System!",
+      "error-code":"Fehlercode: %s",
+      "reason_no_connection":"Keine Verbindung zum Backend!"
+
+    },
+
+    "slider": {
+
+      "about-header":"Automat V2",
+
+      "about":
+      [
+        "Software: Jakob Pröm, Eduart Schneider",
+        "Hardware: Jakob Pröm",
+        "Software Lizenz: Beerware Lizenz",
+        "Besuche das Projekt auf GitHub!"
+      ],
+
+      "telegramm-header":"Automat Online",
+
+      "telegramm":
+      [
+        "Der Automat ist auch auf Telegramm!",
+        "Einfach die Telegramm App herunterladen, den Automaten kannst du unter %s finden.",
+        "Probiere es aus! Es warten viele Vorteile auf dich!"
+      ],
+
+      "winner":
+      [
+        "Heutiger Alkoholiker",
+        "Wochen Alkoholiker",
+        "Alkoholiker des Monats",
+        "Jahresbester",
+        "Master Alkoholiker"
+      ],
+
+      "winner-text":"%s, mit %s Bier",
+
+      "table-text":
+      [
+        "Statistik für Heute",
+        "Statistik diese Woche",
+        "Statistik für diesen Monat",
+        "Statistik für dieses Jahr",
+        "Statistik für Heute"
+      ],
+
+      "table-name":"Name",
+      "table-number":"Anzahl",
+
+      "total-header":"Insgesammt Verkaufte Getränke:"
+    }
+  }
+}

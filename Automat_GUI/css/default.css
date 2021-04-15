@@ -1,0 +1,316 @@
+:root {
+  --main-bg-color: lightgray;
+  --nav-color: #313131;
+  --content-color: #cac7c7;
+}
+
+
+
+
+
+
+body {
+  background-image: url("/pic/background.jpg");
+  background-color:var(--main-bg-color);
+  background-repeat: no-repeat;
+  background-size: auto;
+  height:100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Background {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.Content-Center {
+  background-color:var(--content-color);
+  margin-top: 1%;
+  width: 100%;
+  height: 76%;
+}
+
+
+.Navigation-Bar {
+  background-color:var(--nav-color);
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.Temperature {
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.Info-Title {
+  color: white;
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.Clock {
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Content-Box {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left:  20px;
+  right: 20px;
+}
+
+
+.Footer-Bar {
+  background-color:rgba(0,0,0,0);
+  margin-top: 1%;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.button {
+  width: 31%;
+  height: 90%;
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  z-index: 2;
+}
+
+.button_left {
+  background-color: #1b1a79;
+}
+
+.button_middle {
+  background-color: #791a1a;
+}
+
+.button_right {
+  background-color: #146d14;
+}
+
+
+
+
+
+
+
+
+
+
+.Header {
+  color: black;
+  font-size: 6vw;
+  font-weight: bold;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.NText {
+  color: black;
+  font-size: 3vw;
+  font-weight: bold;
+  width: 98%;
+  padding-left: 2%;
+}
+
+.CText {
+  color: black;
+  font-size: 3vw;
+  font-weight: bold;
+  width: 98%;
+  padding-left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CText_Big {
+  color: black;
+  font-size: 15vw;
+  font-weight: bold;
+  width: 98%;
+  padding-left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.GHlogo {
+  background-image: url("/pic/GitHub_Logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 10%;
+  width: 20%;
+}
+
+.TGlogo {
+  background-image: url("/pic/Telegram_logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 10%;
+  width: 20%;
+}
+
+table {
+  width: 100%;
+}
+
+.top5_table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  font-size: 2vw;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+
+}
+
+.top5_table-header {
+  font-weight: bold;
+  font-size: 2vw;
+  background-color: darkgray;
+}
+
+.top5_table-entry {
+  font-size: 2vw;
+}
+
+
+
+
+
+.Profil-Picture{
+  width: 50%;
+  height: 70%;
+  background-color: black;
+}
+
+.Profil-Picture-Source{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Slider {
+  height: 100%;
+  width: 100%;
+}
+
+.Slider-Container {
+  height: 98%;
+  width: 100%;
+}
+
+.Slider-Item {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.Slider-Item-Container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.Slider-progress {
+  background-color: black;
+  width: 100%;
+  height: 2%;
+}
+
+
+.Slider-progress-status{
+  background-color: #d6e222;
+  width: 50%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display:none;
+
+  background-color: rgba(0, 0, 0, 0.95);
+}

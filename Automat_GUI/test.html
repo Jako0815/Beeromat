@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Nixiclock Interface</title>
+<style>
+  body {
+    background: gray;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .Login-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 99%;
+    top: 0;
+    position: absolute;
+  }
+
+  .Login {
+    height: 99%;
+    width: 99%;
+    background: #3d963d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .Login-Mask {
+    font-size: 2vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
+  }
+
+  .Settings-Mask {
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height:80%;
+    width:50%;
+  }
+
+  .Login-Item {
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Login-Input {
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Login-Button-Container {
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+  }
+
+  .allgemein-Container{
+    border: solid gray;
+    width: 95%;
+    padding-top:2%;
+    padding-bottom:2%;
+  }
+
+
+  .Login-Button {
+    font-size: 4vw;
+    color: white;
+    background: black;
+    border: none;
+    width: 50%;
+    padding-top:2%;
+    padding-bottom:2%;
+  }
+
+  input {
+    font-size: 2vw;
+    background: lightgray;
+    border: none;
+  }
+
+  .check {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+</style>
+<body>
+
+<div class="Login-Container">
+<div class="Login">
+
+  <div class="Login-Mask">
+ <h1>Nixiclock Login</h1>
+ <p class="Login-Item">WLAN Name:</p>
+ <div class="Login-Input">
+ <input id="SSID"></input>
+ </div>
+ <p class="Login-Item">WLAN Passwort:</p>
+ <div class="Login-Input">
+ <input type="password" id="password"></input>
+ </div>
+ <div class="Login-Button-Container">
+ <button class="Login-Button" id="Login">Login</button>
+      </div>
+    </div>
+
+    <div class="Settings-Mask">
+       <h1>Nixiclock Einstellungen</h1>
+
+       <div class ="allgemein-Container">
+       <div class="Login-Item">Allgemein</div>
+       <div>
+       <input type="range" min="1" max="10" value="0" class="slider" id="myRange">
+       <label>Helligkeit </label>
+       </div>
+
+       <div>
+       <input type="checkbox" class="check">
+       <label>Blinkende Uhrzeit</label>
+
+       </div>
+
+       <div>
+       <input type="checkbox" class="check">
+       <label>Datum/Uhrzeit</label>
+       </div>
+
+       <div>
+       <input type="checkbox" class="check">
+       <label>Random Animations</label>
+       </div>
+       </div>
+
+       <div class ="allgemein-Container">
+       <div class="Login-Item">Wecker</div>
+       <div>
+
+       <div>
+         <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+         <label>Uhrzeit</label>
+       </div>
+
+       <div>
+       <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+       <label>Lautstärke</label>
+       </div>
+
+       <div>
+       <input type="checkbox" class="check">
+       <label>Wecker Aktivieren</label>
+       </div>
+
+
+       <div>
+       <input type="checkbox" class="check">Mo-Fr
+       <input type="checkbox" class="check">Mo-So
+       <input type="checkbox" class="check">Sa-So
+       </div>
+
+
+       </div>
+
+      </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script>
+
+  document.getElementById("Login").addEventListener("click", function() {
+    var request = new XMLHttpRequest();
+    request.open("GET","daten.txt");
+    request.setRequestHeader("WLAN-SSID",document.getElementById("SSID").value);
+    request.setRequestHeader("WLAN-PSWD",document.getElementById("password").value);
+    request.send();
+  });
+
+
+</script>
+
+</body>

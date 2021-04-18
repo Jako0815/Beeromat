@@ -221,11 +221,11 @@ websocket.onmessage = function (event) {
 };
 
 websocket.onerror = function(event) {
-  var container = Create_new_Container("Error");
-  Create_Div_Element("Header",Get_Lang("error","error-header"),container);
-  Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
-  Button_Controll("","","");
-  Set_Title("error");
+  //var container = Create_new_Container("Error");
+  //Create_Div_Element("Header",Get_Lang("error","error-header"),container);
+  //Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
+//  Button_Controll("","","");
+//  Set_Title("error");
 
 };
 

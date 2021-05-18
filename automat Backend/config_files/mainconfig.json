@@ -1,0 +1,11 @@
+{
+  "websocket": {
+    "port": "6789",
+    "host": "localhost"
+  },
+  "mysql": {
+    "username": "monty",
+    "password": "some_pass",
+    "host": "localhost"
+  }
+}

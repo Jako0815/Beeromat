@@ -3,7 +3,8 @@
 
     "title": {
       "welcome":"Willkommen!",
-      "error":"Fehler!"
+      "error":"Fehler!",
+      "startup":"Hochfahren"
 
     },
 
@@ -33,6 +34,11 @@
       "error-code":"Fehlercode: %s",
       "reason_no_connection":"Keine Verbindung zum Backend!"
 
+    },
+
+    "startup" : {
+      "start" : "Software wird gestartet",
+      "wait" : "Bitte warten"
     },
 
     "slider": {

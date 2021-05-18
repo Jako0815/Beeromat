@@ -158,8 +158,23 @@ websocket.onmessage = function (event) {
 
     $(".Content-Center").empty();
     var item = Create_Div_Element("Slider-Container","", $("Content-Center"));
+    Button_Controll(data.display.key1,data.display.key2,data.display.key3);
 
-    switch(data.display){
+    temperature.innerHTML = data.display.temperature;
+
+    switch(data.display.screen){
+
+      case "startup":
+        var container = Create_new_Container("Startup");
+        Create_Div_Element("Header",Get_Lang("startup","start"),container);
+        Create_Div_Element("CText",Get_Lang("startup","wait"),container);
+        Button_Controll("","","");
+        Set_Title("startup");
+      break;
+
+
+
+
       case "slider":
         $(".Slider-Container").empty();
 
@@ -221,11 +236,11 @@ websocket.onmessage = function (event) {
 };
 
 websocket.onerror = function(event) {
-  //var container = Create_new_Container("Error");
-  //Create_Div_Element("Header",Get_Lang("error","error-header"),container);
-  //Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
-//  Button_Controll("","","");
-//  Set_Title("error");
+  var container = Create_new_Container("Error");
+  Create_Div_Element("Header",Get_Lang("error","error-header"),container);
+  Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
+  Button_Controll("","","");
+  Set_Title("error");
 
 };
 

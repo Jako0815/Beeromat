@@ -156,9 +156,7 @@ $( document ).ready(function() {
 websocket.onmessage = function (event) {
     data = JSON.parse(event.data);
 
-    $(".Content-Center").empty();
-    var item = Create_Div_Element("Slider-Container","", $("Content-Center"));
-    Button_Controll(data.display.key1,data.display.key2,data.display.key3);
+    $(".Content-Center").empty();    Button_Controll(data.display.key1,data.display.key2,data.display.key3);
 
     temperature.innerHTML = data.display.temperature;
 
@@ -176,13 +174,17 @@ websocket.onmessage = function (event) {
 
 
       case "slider":
+        Create_new_Container("Slider-Container");
         $(".Slider-Container").empty();
 
-        for (var i = 0; i < data.slider.content.length; i++){
+        var item = Create_Div_Element("Slider-progress","", $(".Content-Center"));
+        Create_Div_Element("Slider-progress-status","",item,"Slider-progress-status");
+
+        for (var i = 0; i < data.display.slider.content.length; i++){
           var item = Create_Div_Element("Slider-Item","", $(".Slider-Container"));
           var container = Create_Div_Element("Slider-Item-Container","", item);
 
-          switch(data.slider.content[i].id){
+          switch(data.display.slider.content[i].id){
             case "about":
               Create_Div_Element("Header",Get_Lang("slider","about-header"),container);
               for (var t=0;t<Get_Lang("slider","about").length;t++){
@@ -193,36 +195,36 @@ websocket.onmessage = function (event) {
             case "telegramm":
               Create_Div_Element("Header",Get_Lang("slider","telegramm-header"),container);
               Create_Div_Element("NText",Get_Lang("slider","telegramm",0),container);
-              Create_Div_Element("NText",sprintf(Get_Lang("slider","telegramm",1),data.slider.content[i].username),container);
+              Create_Div_Element("NText",sprintf(Get_Lang("slider","telegramm",1),data.display.slider.content[i].username),container);
               Create_Div_Element("NText",Get_Lang("slider","telegramm",2),container);
             break;
 
 
             case "winner":
-              Create_Div_Element("Header",Get_Lang("slider","winner",Time_for_Array(data.slider.content[i].time)),container);
+              Create_Div_Element("Header",Get_Lang("slider","winner",Time_for_Array(data.display.slider.content[i].time)),container);
 
 
-              Add_Picture_Element("Profil-Picture","Profil-Picture-Source","/pic/users/" + data.slider.content[i].picture,container);
+              Add_Picture_Element("Profil-Picture","Profil-Picture-Source","/pic/users/" + data.display.slider.content[i].picture,container);
 
-              Create_Div_Element("CText", sprintf(Get_Lang("slider","winner-text"),data.slider.content[i].username, data.slider.content[i].number),container);
+              Create_Div_Element("CText", sprintf(Get_Lang("slider","winner-text"),data.display.slider.content[i].username, data.display.slider.content[i].number),container);
             break;
 
 
             case "top5-table":
-            Create_Div_Element("Header",Get_Lang("slider","table-text",Time_for_Array(data.slider.content[i].time)),container);
+            Create_Div_Element("Header",Get_Lang("slider","table-text",Time_for_Array(data.display.slider.content[i].time)),container);
 
             var table = Create_Table_Element("top5_table",container);
 
             Table_Add_2_Entrys("top5_table-header",Get_Lang("slider","table-name"),Get_Lang("slider","table-number"),table);
-            for (var t = 0; t < data.slider.content[i].table.length; t++){
-              Table_Add_2_Entrys("top5_table-entry",data.slider.content[i].table[t].name,data.slider.content[i].table[t].number,table);
+            for (var t = 0; t < data.display.slider.content[i].table.length; t++){
+              Table_Add_2_Entrys("top5_table-entry",data.display.slider.content[i].table[t].name,data.display.slider.content[i].table[t].number,table);
             }
 
             break;
 
             case "total":
               Create_Div_Element("Header",Get_Lang("slider","total-header"),container);
-              Create_Div_Element("CText_Big",data.slider.content[i].number,container);
+              Create_Div_Element("CText_Big",data.display.slider.content[i].number,container);
             break;
 
 
@@ -236,11 +238,11 @@ websocket.onmessage = function (event) {
 };
 
 websocket.onerror = function(event) {
-  var container = Create_new_Container("Error");
-  Create_Div_Element("Header",Get_Lang("error","error-header"),container);
-  Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
-  Button_Controll("","","");
-  Set_Title("error");
+  //var container = Create_new_Container("Error");
+  //Create_Div_Element("Header",Get_Lang("error","error-header"),container);
+  //Create_Div_Element("CText",Get_Lang("error","reason_no_connection"),container);
+  //Button_Controll("","","");
+  //Set_Title("error");
 
 };
 

@@ -24,7 +24,7 @@ $( document ).ready(function() {
 window.onload = ticken;
 
 window.onerror = function() {
-    location.reload();
+  //  location.reload();
 }
 
 
